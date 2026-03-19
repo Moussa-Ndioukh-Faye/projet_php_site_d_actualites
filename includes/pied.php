@@ -1,3 +1,3 @@
-</div> <!-- fermeture container -->
+</div>
 </body>
 </html>
