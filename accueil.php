@@ -1,9 +1,13 @@
 <?php
+if(isset($_GET['page']) && !empty($_GET['page'])){
+    $pagecourant =(int) strip_tags($_GET['page']);
+}else{
+    $pagecourant = 1;
+}
 require_once 'config/connexion.php';
 include 'includes/entete.php';
 include 'includes/menu.php';
-
-$articles = $pdo->query("SELECT * FROM articles ORDER BY date_publication DESC")->fetchAll();
+include 'articles/liste.php';
 ?>
 
 <h1> Les dernières actualités</h1>
@@ -25,8 +29,20 @@ $articles = $pdo->query("SELECT * FROM articles ORDER BY date_publication DESC")
             <a href="detail.php?id=<?php echo $article['id']; ?>" class="btn">
                 Lire la suite 
             </a>
+            <nav>
+                <?php if($pages > 1): ?>
+                    <div class="pagination">
+                        <?php for($i = 1; $i <= $pages; $i++): ?>
+                            <a href="?page=<?php echo $i; ?>" 
+                            <?php echo ($i == $pagecourant) ? 'class="active"' : ''; ?>>
+                                <?php echo $i; ?>
+                            </a>
+                        <?php endfor; ?>
+                    </div>
+                <?php endif; ?>
+            </nav>
         </div>
     <?php endforeach; ?>
 <?php endif; ?>
- <link rel="stylesheet" href="style.css">
+ 
 <?php include 'includes/pied.php'; ?>

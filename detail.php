@@ -22,5 +22,5 @@ $article = $pdo->query("SELECT * FROM articles WHERE id = $id")->fetch();
         Retour à l'accueil
     </a>
 </article>
- <link rel="stylesheet" href="/style.css">
+ <link rel="stylesheet" href="style.css">
 <?php include 'includes/pied.php'; ?>
