@@ -29,20 +29,22 @@ include 'articles/liste.php';
             <a href="detail.php?id=<?php echo $article['id']; ?>" class="btn">
                 Lire la suite 
             </a>
-            <nav>
-                <?php if($pages > 1): ?>
+        </div>
+    <?php endforeach; ?>
+    
+          <?php if($pages > 1): ?>
+                <nav>
                     <div class="pagination">
                         <?php for($i = 1; $i <= $pages; $i++): ?>
                             <a href="?page=<?php echo $i; ?>" 
-                            <?php echo ($i == $pagecourant) ? 'class="active"' : ''; ?>>
+                                <?php echo ($i == $pagecourant) ? 'class="active"' : ''; ?>>
                                 <?php echo $i; ?>
                             </a>
                         <?php endfor; ?>
-                    </div>
+                        </div>
+                    </nav>
                 <?php endif; ?>
-            </nav>
-        </div>
-    <?php endforeach; ?>
+            
 <?php endif; ?>
  
 <?php include 'includes/pied.php'; ?>
