@@ -5,6 +5,6 @@
 if (session_start() === PHP_SESSION_NONE) session_start();
 $_SESSION = [];
 session_destroy();
-header("Location: acceuil.php");
+header("Location: accueil.php");
 exit();
 ?>
