@@ -64,7 +64,7 @@ $categories = $pdo->query("SELECT id, nom FROM categories")->fetchAll();
 ?>
 
 <div style="margin-bottom: 2rem;">
-    <a href="liste.php" class="btn btn-secondary">⬅ Retour</a>
+    <a href="liste.php" class="btn btn-secondary"><i class="material-icons">arrow_back</i> Retour</a>
 </div>
 
 <h1>Modifier l'article</h1>
@@ -104,8 +104,8 @@ $categories = $pdo->query("SELECT id, nom FROM categories")->fetchAll();
         </div>
 
         <div style="display: flex; gap: 1rem; margin-top: 2rem;">
-            <input type="submit" class="btn btn-primary" value="Enregistrer les modifications" style="flex: 1;">
-            <a href="liste.php" class="btn btn-secondary" style="flex: 1; display: flex; align-items: center; justify-content: center;">Annuler</a>
+            <input type="submit" class="btn btn-primary" value="&#xe161; Enregistrer les modifications" style="flex: 1;">
+            <a href="liste.php" class="btn btn-secondary" style="flex: 1; display: flex; align-items: center; justify-content: center;"><i class="material-icons">cancel</i> Annuler</a>
         </div>
     </form>
 </div>

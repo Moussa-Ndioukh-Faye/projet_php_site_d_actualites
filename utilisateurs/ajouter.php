@@ -36,7 +36,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
 ?>
 
 <div style="margin-bottom: 2rem;">
-    <a href="liste.php" class="btn btn-secondary">⬅ Retour</a>
+    <a href="liste.php" class="btn btn-secondary"><i class="material-icons">arrow_back</i> Retour</a>
 </div>
 
 <h1>Ajouter un utilisateur</h1>
@@ -48,10 +48,10 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
 
     <?php if($succes): ?>
         <div class="success">
-            ✅ <?= htmlspecialchars($succes) ?>
+            <i class="material-icons">check_circle</i> <?= htmlspecialchars($succes) ?>
             <br><br>
-            <a href="liste.php" class="btn btn-primary">Ajouter un autre utilisateur</a>
-            <a href="../admin.php" class="btn btn-secondary">Retour</a>
+            <a href="liste.php" class="btn btn-primary"><i class="material-icons">add</i> Ajouter un autre utilisateur</a>
+            <a href="../admin.php" class="btn btn-secondary"><i class="material-icons">arrow_back</i> Retour</a>
         </div>
     <?php else: ?>
         <form method="POST">
@@ -84,8 +84,8 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
             </div>
 
             <div style="display: flex; gap: 1rem; margin-top: 2rem;">
-                <input type="submit" class="btn btn-primary" value="Ajouter l'utilisateur" style="flex: 1;">
-                <a href="liste.php" class="btn btn-secondary" style="flex: 1; display: flex; align-items: center; justify-content: center;">Annuler</a>
+                <input type="submit" class="btn btn-primary" value="&#xe145; Ajouter l'utilisateur" style="flex: 1;">
+                <a href="liste.php" class="btn btn-secondary" style="flex: 1; display: flex; align-items: center; justify-content: center;"><i class="material-icons">cancel</i> Annuler</a>
             </div>
         </form>
     <?php endif; ?>

@@ -28,10 +28,10 @@ if(isset($_GET['id'])){
     <h1><?= htmlspecialchars($result['titre']) ?></h1>
     
     <div style="color: var(--text-tertiary); font-size: 0.9rem; margin-bottom: 1rem;">
-        <span>📅 <?= date('d/m/Y', strtotime($result['date_publication'])) ?></span>
-        <span style="margin-left: 1rem;">✍️ <?= htmlspecialchars(($result['prenom'] ?? '') . ' ' . ($result['nom'] ?? '')) ?></span>
+        <span><i class="material-icons">calendar_today</i> <?= date('d/m/Y', strtotime($result['date_publication'])) ?></span>
+        <span style="margin-left: 1rem;"><i class="material-icons">person</i> <?= htmlspecialchars(($result['prenom'] ?? '') . ' ' . ($result['nom'] ?? '')) ?></span>
         <?php if($result['categorie']): ?>
-            <span style="margin-left: 1rem;">🏷️ <?= htmlspecialchars($result['categorie']) ?></span>
+            <span style="margin-left: 1rem;"><i class="material-icons">label</i> <?= htmlspecialchars($result['categorie']) ?></span>
         <?php endif; ?>
     </div>
     
@@ -41,8 +41,8 @@ if(isset($_GET['id'])){
 </article>
 
 <div style="margin-bottom: 2rem;">
-    <a href="liste.php" class="btn btn-secondary">⬅ Retour aux articles</a>
-    <a href="../accueil.php" class="btn btn-secondary">Accueil</a>
+    <a href="liste.php" class="btn btn-secondary"><i class="material-icons">arrow_back</i> Retour aux articles</a>
+    <a href="../accueil.php" class="btn btn-secondary"><i class="material-icons">home</i> Accueil</a>
 </div>
 
 <?php include '../includes/pied.php'; ?>

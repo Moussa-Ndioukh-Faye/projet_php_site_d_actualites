@@ -27,11 +27,11 @@ if(isset($_SESSION['utilisateur'])){
                 </a>
             </h2>
             <div class="article-date">
-               <?php echo date('d/m/Y', strtotime($article['date_publication'])); ?>
+               <i class="material-icons">calendar_today</i> <?php echo date('d/m/Y', strtotime($article['date_publication'])); ?>
             </div>
             <p><?php echo htmlspecialchars($article['description_courte']); ?></p>
             <a href="articles/detail.php?id=<?php echo $article['id']; ?>" class="btn btn-primary">
-                Lire la suite 
+                <i class="material-icons">read_more</i> Lire la suite 
             </a>
         </div>
     <?php endforeach; ?>

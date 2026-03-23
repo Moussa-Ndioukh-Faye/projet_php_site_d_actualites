@@ -14,8 +14,8 @@ $categories = $pdo->query("SELECT * FROM categories ORDER BY nom")->fetchAll();
 <h1>Gestion des catégories</h1>
 
 <div style="margin-bottom: 2rem; display: flex; gap: 1rem; flex-wrap: wrap;">
-    <a href="ajouter.php" class="btn btn-primary">➕ Nouvelle catégorie</a>
-    <a href="../editeur.php" class="btn btn-secondary">⬅ Retour</a>
+    <a href="ajouter.php" class="btn btn-primary"><i class="material-icons">add</i> Nouvelle catégorie</a>
+    <a href="../editeur.php" class="btn btn-secondary"><i class="material-icons">arrow_back</i> Retour</a>
 </div>
 
 <table>
@@ -34,8 +34,8 @@ $categories = $pdo->query("SELECT * FROM categories ORDER BY nom")->fetchAll();
             <td><?= htmlspecialchars($c['nom']) ?></td>
             <td><?= htmlspecialchars($c['description']) ?></td>
             <td>
-                <a href="modifier.php?id=<?= $c['id'] ?>" class="btn btn-secondary" style="font-size: 0.85rem;">Modifier</a>
-                <a href="supprimer.php?id=<?= $c['id'] ?>" class="btn btn-danger" style="font-size: 0.85rem;" onclick="return confirm('Supprimer cette catégorie ?')">Supprimer</a>
+                <a href="modifier.php?id=<?= $c['id'] ?>" class="btn btn-secondary" style="font-size: 0.85rem;"><i class="material-icons">edit</i> Modifier</a>
+                <a href="supprimer.php?id=<?= $c['id'] ?>" class="btn btn-danger" style="font-size: 0.85rem;" onclick="return confirm('Supprimer cette catégorie ?')"><i class="material-icons">delete</i> Supprimer</a>
             </td>
         </tr>
         <?php endforeach; ?>

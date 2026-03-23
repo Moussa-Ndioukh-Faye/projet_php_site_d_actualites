@@ -26,23 +26,23 @@ include 'includes/entete.php';
 <div class="admin-dashboard">
     <?php if($role === 'administrateur'): ?>
         <div class="info" style="margin-bottom: 2rem;">
-            👑 Vous êtes administrateur. <a href="admin.php">Accédez au panneau complet →</a>
+            <i class="material-icons" style="vertical-align: middle; font-size: 1rem;">shield_moon</i> Vous êtes administrateur. <a href="admin.php">Accédez au panneau complet →</a>
         </div>
     <?php endif; ?>
     
     <h2>Mes articles</h2>
     
     <div style="margin-bottom: 2rem; display: flex; gap: 1rem; flex-wrap: wrap;">
-        <a href="articles/ajouter.php" class="btn btn-primary">➕ Nouvel article</a>
-        <a href="articles/liste.php" class="btn btn-secondary">📋 Gérer les articles</a>
-        <a href="categories/liste.php" class="btn btn-secondary">🏷️ Gérer les catégories</a>
+        <a href="articles/ajouter.php" class="btn btn-primary"><i class="material-icons">add</i> Nouvel article</a>
+        <a href="articles/liste.php" class="btn btn-secondary"><i class="material-icons">list</i> Gérer les articles</a>
+        <a href="categories/liste.php" class="btn btn-secondary"><i class="material-icons">label</i> Gérer les catégories</a>
     </div>
     
     <table>
         <thead>
             <tr>
                 <th>Titre</th>
-                <th>Date</th>
+                <th><i class="material-icons" style="font-size: 16px; vertical-align: middle;">calendar_today</i> Date</th>
                 <th>Catégorie</th>
                 <th>Actions</th>
             </tr>

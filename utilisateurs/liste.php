@@ -14,8 +14,8 @@ $utilisateurs = $pdo->query("SELECT * FROM utilisateurs ORDER BY role, nom")->fe
 <h1>Gestion des utilisateurs</h1>
 
 <div style="margin-bottom: 2rem; display: flex; gap: 1rem; flex-wrap: wrap;">
-    <a href="ajouter.php" class="btn btn-primary">➕ Nouvel utilisateur</a>
-    <a href="../admin.php" class="btn btn-secondary">⬅ Retour</a>
+    <a href="ajouter.php" class="btn btn-primary"><i class="material-icons">add</i> Nouvel utilisateur</a>
+    <a href="../admin.php" class="btn btn-secondary"><i class="material-icons">arrow_back</i> Retour</a>
 </div>
 
 <table>
@@ -26,7 +26,7 @@ $utilisateurs = $pdo->query("SELECT * FROM utilisateurs ORDER BY role, nom")->fe
             <th>Prénom</th>
             <th>Login</th>
             <th>Rôle</th>
-            <th>Date création</th>
+            <th><i class="material-icons" style="font-size: 16px; vertical-align: middle;">calendar_today</i> Date création</th>
             <th>Actions</th>
         </tr>
     </thead>
@@ -40,9 +40,9 @@ $utilisateurs = $pdo->query("SELECT * FROM utilisateurs ORDER BY role, nom")->fe
             <td><?= $u['role'] ?></td>
             <td><?= date('d/m/Y', strtotime($u['date_creation'])) ?></td>
             <td>
-                <a href="modifier.php?id=<?= $u['id'] ?>" class="btn btn-secondary" style="font-size: 0.85rem;">Modifier</a>
+                <a href="modifier.php?id=<?= $u['id'] ?>" class="btn btn-secondary" style="font-size: 0.85rem;"><i class="material-icons">edit</i> Modifier</a>
                 <?php if($u['id'] != $_SESSION['utilisateur']['id']): ?>
-                    <a href="supprimer.php?id=<?= $u['id'] ?>" class="btn btn-danger" style="font-size: 0.85rem;" onclick="return confirm('Supprimer cet utilisateur ?')">Supprimer</a>
+                    <a href="supprimer.php?id=<?= $u['id'] ?>" class="btn btn-danger" style="font-size: 0.85rem;" onclick="return confirm('Supprimer cet utilisateur ?')"><i class="material-icons">delete</i> Supprimer</a>
                 <?php endif; ?>
             </td>
         </tr>

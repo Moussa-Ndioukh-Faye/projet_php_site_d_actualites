@@ -23,8 +23,8 @@ $articles = $pdo->query("
 <h1>Gestion des articles</h1>
 
 <div style="margin-bottom: 2rem;">
-    <a href="../editeur.php" class="btn btn-secondary">⬅ Retour</a>
-    <a href="ajouter.php" class="btn btn-primary">➕ Ajouter un article</a>
+    <a href="../editeur.php" class="btn btn-secondary"><i class="material-icons">arrow_back</i> Retour</a>
+    <a href="ajouter.php" class="btn btn-primary"><i class="material-icons">add</i> Ajouter un article</a>
 </div>
 
 <?php if (empty($articles)): ?>
@@ -40,7 +40,7 @@ $articles = $pdo->query("
             <th>Titre</th>
             <th>Catégorie</th>
             <th>Auteur</th>
-            <th>Date</th>
+            <th><i class="material-icons" style="font-size: 16px; vertical-align: middle;">calendar_today</i> Date</th>
             <th>Actions</th>
         </tr>
     </thead>
@@ -58,9 +58,9 @@ $articles = $pdo->query("
             <td><?= date('d/m/Y', strtotime($a['date_publication'])) ?></td>
 
             <td>
-                <a href="detail.php?id=<?= $a['id'] ?>" class="btn btn-secondary" style="font-size: 0.85rem; padding: 0.5rem 0.75rem;">Voir</a>
-                <a href="modifier.php?id=<?= $a['id'] ?>" class="btn btn-secondary" style="font-size: 0.85rem; padding: 0.5rem 0.75rem;">Modifier</a>
-                <a href="supprimer.php?id=<?= $a['id'] ?>" class="btn btn-danger" style="font-size: 0.85rem; padding: 0.5rem 0.75rem;" onclick="return confirm('Supprimer cet article ?')">Supprimer</a>
+                <a href="detail.php?id=<?= $a['id'] ?>" class="btn btn-secondary" style="font-size: 0.85rem; padding: 0.5rem 0.75rem;"><i class="material-icons">visibility</i> Voir</a>
+                <a href="modifier.php?id=<?= $a['id'] ?>" class="btn btn-secondary" style="font-size: 0.85rem; padding: 0.5rem 0.75rem;"><i class="material-icons">edit</i> Modifier</a>
+                <a href="supprimer.php?id=<?= $a['id'] ?>" class="btn btn-danger" style="font-size: 0.85rem; padding: 0.5rem 0.75rem;" onclick="return confirm('Supprimer cet article ?')"><i class="material-icons">delete</i> Supprimer</a>
             </td>
         </tr>
     <?php endforeach; ?>

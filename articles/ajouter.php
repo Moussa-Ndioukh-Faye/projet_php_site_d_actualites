@@ -59,7 +59,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
 ?>
 
 <div style="margin-bottom: 2rem;">
-    <a href="../editeur.php" class="btn btn-secondary">⬅ Retour à mon espace</a>
+    <a href="../editeur.php" class="btn btn-secondary"><i class="material-icons">arrow_back</i> Retour à mon espace</a>
 </div>
 
 <h1>Publier un nouvel article</h1>
@@ -74,8 +74,8 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
         <div class="success">
             <?= htmlspecialchars($succes) ?>
             <br><br>
-            <a href="ajouter.php" class="btn btn-primary">Publier un autre article</a>
-            <a href="../editeur.php" class="btn btn-secondary">Retour à mon espace</a>
+            <a href="ajouter.php" class="btn btn-primary"><i class="material-icons">add</i> Publier un autre article</a>
+            <a href="../editeur.php" class="btn btn-secondary"><i class="material-icons">arrow_back</i> Retour à mon espace</a>
         </div>
     <?php else: ?>
         <form method="POST" action="ajouter.php" onsubmit="return validerFormulaire()">
@@ -123,8 +123,8 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
             </div>
             
             <div style="display: flex; gap: 1rem; margin-top: 2rem;">
-                <input type="submit" class="btn btn-primary" value="Publier l'article" style="flex: 1;">
-                <a href="../editeur.php" class="btn btn-secondary" style="flex: 1; display: flex; align-items: center; justify-content: center;">Annuler</a>
+                <input type="submit" class="btn btn-primary" value="&#xe254; Publier l'article" style="flex: 1;">
+                <a href="../editeur.php" class="btn btn-secondary" style="flex: 1; display: flex; align-items: center; justify-content: center;"><i class="material-icons">cancel</i> Annuler</a>
         </form>
     <?php endif; ?>
 </div>

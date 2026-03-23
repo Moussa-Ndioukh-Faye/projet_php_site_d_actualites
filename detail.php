@@ -11,7 +11,7 @@ $article = $pdo->query("SELECT * FROM articles WHERE id = $id")->fetch();
     <h1> <?php echo htmlspecialchars($article['titre']); ?></h1>
     
     <div class="article-date">
-       Publié le <?php echo date('d/m/Y à H:i', strtotime($article['date_publication'])); ?>
+       <i class="material-icons">calendar_today</i> Publié le <?php echo date('d/m/Y à H:i', strtotime($article['date_publication'])); ?>
     </div>
     
     <div class="article-contenu">

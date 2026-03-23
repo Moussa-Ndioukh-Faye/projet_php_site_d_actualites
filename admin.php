@@ -16,9 +16,9 @@ include 'includes/entete.php';
     <h1>Panneau d'administration</h1>
     <p>Bienvenue, <?= htmlspecialchars($_SESSION['utilisateur']['prenom'] . ' ' . $_SESSION['utilisateur']['nom']) ?></p>
     <div class="admin-nav">
-        <a href="accueil.php" class="btn btn-primary">Accueil</a>
-        <a href="articles/ajouter.php" class="btn btn-secondary">+ Nouvel article</a>
-        <a href="deconnexion.php" class="btn btn-danger">Déconnexion</a>
+        <a href="accueil.php" class="btn btn-primary"><i class="material-icons">home</i> Accueil</a>
+        <a href="articles/ajouter.php" class="btn btn-secondary"><i class="material-icons">add</i> Nouvel article</a>
+        <a href="deconnexion.php" class="btn btn-danger"><i class="material-icons">logout</i> Déconnexion</a>
     </div>
 </div>
 
@@ -60,10 +60,10 @@ include 'includes/entete.php';
     <!-- Actions rapides -->
     <div class="quick-actions">
         <h3>Actions rapides</h3>
-        <a href="articles/ajouter.php" class="btn">➕ Nouvel article</a>
-        <a href="articles/liste.php" class="btn">📋 Gérer les articles</a>
-        <a href="utilisateurs/liste.php" class="btn">👥 Gérer les utilisateurs</a>
-        <a href="categories/liste.php" class="btn">🏷️ Gérer les catégories</a>
+        <a href="articles/ajouter.php" class="btn"><i class="material-icons">add</i> Nouvel article</a>
+        <a href="articles/liste.php" class="btn"><i class="material-icons">list</i> Gérer les articles</a>
+        <a href="utilisateurs/liste.php" class="btn"><i class="material-icons">people</i> Gérer les utilisateurs</a>
+        <a href="categories/liste.php" class="btn"><i class="material-icons">label</i> Gérer les catégories</a>
     </div>
     
     <!-- Derniers articles -->
@@ -73,7 +73,7 @@ include 'includes/entete.php';
             <thead>
                 <tr>
                     <th>Titre</th>
-                    <th>Date</th>
+                    <th><i class="material-icons" style="font-size: 16px; vertical-align: middle;">calendar_today</i> Date</th>
                     <th>Auteur</th>
                     <th>Actions</th>
                 </tr>
@@ -95,8 +95,8 @@ include 'includes/entete.php';
                     <td><?= date('d/m/Y', strtotime($article['date_publication'])) ?></td>
                     <td><?= htmlspecialchars($article['prenom'] . ' ' . $article['nom']) ?></td>
                     <td>
-                        <a href="articles/modifier.php?id=<?= $article['id'] ?>">✏️</a>
-                        <a href="articles/supprimer.php?id=<?= $article['id'] ?>" onclick="return confirm('Supprimer ?')">🗑️</a>
+                        <a href="articles/modifier.php?id=<?= $article['id'] ?>" class="btn btn-secondary" style="font-size:0.82rem; padding:0.35rem 0.5rem;"><i class="material-icons">edit</i></a>
+                        <a href="articles/supprimer.php?id=<?= $article['id'] ?>" class="btn btn-danger" style="font-size:0.82rem; padding:0.35rem 0.5rem;" onclick="return confirm('Supprimer ?')"><i class="material-icons">delete</i></a>
                     </td>
                 </tr>
                 <?php endwhile; ?>
