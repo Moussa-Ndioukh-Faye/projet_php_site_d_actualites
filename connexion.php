@@ -42,6 +42,22 @@ $page_title = 'Connexion';
 require_once 'includes/entete.php';
 require_once 'includes/menu.php';
 ?>
+<<<<<<< HEAD
+=======
+<nav class="main-nav">
+    <div class="container nav-inner">
+        <ul class="nav-links">
+            <li><a href="accueil.php"> Accueil</li>
+        </ul>
+    </div>
+</nav>
+<div class="login-wrap">
+    <div class="card-body">
+         <div class="login-logo"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M240-200h120v-240h240v240h120v-360L480-740 240-560v360Zm-80 80v-480l320-240 320 240v480H520v-240h-80v240H160Zm320-350Z"/></svg></div>
+            <h1>Connexion</h1>
+            <p class="login-sub">Accès réservé aux éditeurs et administrateurs</p>    
+            
+>>>>>>> 47d322a2e3d712490574ff101cc5d04cceb10202
 
 <div class="login-wrap">
     <div class="card login-card">
