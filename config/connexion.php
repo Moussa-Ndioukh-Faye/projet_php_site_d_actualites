@@ -1,15 +1,9 @@
 <?php
-//-----------------------
 //parametre de connexion
-//-----------------------
-$host = 'localhost'; //Adresse du serveur MySQL
-$dbname = 'site_actualite'; //Nom de la base de donnees 
 $user = 'root'; //Nom utilisateur
 $password = ''; //Mot de passe
 
-//--------------------------------------
 //options PDO pour securite et encodage
-//--------------------------------------
 
 $options = [
     PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION, // Gestion des erreurs
@@ -25,11 +19,5 @@ try {
         <strong>Erreur de connexion à la base de données :</strong><br>' .
         htmlspecialchars($e->getMessage(), ENT_QUOTES, 'UTF-8') .
         '</div>');
-}
-
-// Fonction raccourcie pour échapper les sorties HTML (anti-XSS)
-function e(string $str): string {
-    return htmlspecialchars($str, ENT_QUOTES, 'UTF-8');
-}
-
+    }
 ?>

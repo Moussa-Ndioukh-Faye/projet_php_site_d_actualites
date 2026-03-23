@@ -1,24 +1,28 @@
 <?php
-if(isset($_GET['page']) && !empty($_GET['page'])){
-    $pagecourant =(int) strip_tags($_GET['page']);
-}else{
-    $pagecourant = 1;
-}
+session_start();
 require_once 'config/connexion.php';
 include 'includes/entete.php';
-include 'includes/menu.php';
-include 'articles/liste.php';
+
+$articles = $pdo->query("SELECT * FROM articles ORDER BY date_publication DESC")->fetchAll();
+
+if(isset($_SESSION['utilisateur'])){
+    echo '<div class="info" style="margin-bottom: 2rem;"><strong>Bienvenue " '. htmlspecialchars($_SESSION['utilisateur']['prenom']) . '!</strong> Allez à <a href="editeur.php">mon espace</a> pour gérer vos articles.</div>';
+}
 ?>
 
-<h1> Les dernières actualités</h1>
+<h1>Les dernières actualités</h1>
 
+<div class="article-cards-grid">
 <?php if (empty($articles)): ?>
-    <p>Aucun article pour le moment.</p>
+    <div class="empty-state">
+        <p>Aucun article pour le moment.</p>
+        <p>Revenez bientôt !</p>
+    </div>
 <?php else: ?>
     <?php foreach($articles as $article): ?>
         <div class="article-card">
             <h2>
-                <a href="detail.php?id=<?php echo $article['id']; ?>">
+                <a href="articles/detail.php?id=<?php echo $article['id']; ?>">
                     <?php echo htmlspecialchars($article['titre']); ?>
                 </a>
             </h2>
@@ -26,25 +30,11 @@ include 'articles/liste.php';
                <?php echo date('d/m/Y', strtotime($article['date_publication'])); ?>
             </div>
             <p><?php echo htmlspecialchars($article['description_courte']); ?></p>
-            <a href="detail.php?id=<?php echo $article['id']; ?>" class="btn">
+            <a href="articles/detail.php?id=<?php echo $article['id']; ?>" class="btn btn-primary">
                 Lire la suite 
             </a>
         </div>
     <?php endforeach; ?>
-    
-          <?php if($pages > 1): ?>
-                <nav>
-                    <div class="pagination">
-                        <?php for($i = 1; $i <= $pages; $i++): ?>
-                            <a href="?page=<?php echo $i; ?>" 
-                                <?php echo ($i == $pagecourant) ? 'class="active"' : ''; ?>>
-                                <?php echo $i; ?>
-                            </a>
-                        <?php endfor; ?>
-                        </div>
-                    </nav>
-                <?php endif; ?>
-            
 <?php endif; ?>
- 
+</div>
 <?php include 'includes/pied.php'; ?>
