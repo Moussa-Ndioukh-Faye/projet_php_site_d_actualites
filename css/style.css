@@ -341,7 +341,7 @@ h3 {
 }
 
 .article-date::before {
-    content: '📅';
+    content: '';
 }
 
 .article-cards-grid {
