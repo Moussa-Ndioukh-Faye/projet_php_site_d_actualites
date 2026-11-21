@@ -1,10 +1,10 @@
-# 📰 Site d'actualités en PHP — première version
+# Site d'actualités en PHP — première version
 
 ![PHP](https://img.shields.io/badge/PHP-777bb4?style=flat-square&logo=php&logoColor=white) ![MySQL](https://img.shields.io/badge/MySQL-4479a1?style=flat-square&logo=mysql&logoColor=white)
 
 Première version de mon site d'actualités en PHP/MySQL : articles, catégories, utilisateurs et espaces séparés pour l'éditeur (`editeur.php`) et l'administrateur (`admin.php`).
 
-> ➡️ **La version aboutie est [ActuSen](https://github.com/Moussa-Ndioukh-Faye/Actusen_site_actualite)** : code réorganisé, installation guidée et mots de passe hachés. Ce dépôt est conservé pour montrer l'évolution du projet.
+> **La version aboutie est [ActuSen](https://github.com/Moussa-Ndioukh-Faye/Actusen_site_actualite)** : code réorganisé, installation guidée et mots de passe hachés. Ce dépôt est conservé pour montrer l'évolution du projet.
 
 ## Lancer le projet
 
